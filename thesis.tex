@@ -138,6 +138,17 @@ starts here.
 %%
 %
 
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{proposition}{Proposition}[section]
+\theoremstyle{definition}
+\newtheorem{example}{Example}[section]
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
 \begin{document}
 
 % Everything below added by CII
@@ -367,7 +378,7 @@ starts here.
   \textbf{R} graphics package to produce a plot using the built-in
   \texttt{pressure} dataset:
   
-  \begin{center}\includegraphics{thesis_files/figure-latex/pressure-1} \end{center}
+  \includegraphics{thesis_files/figure-latex/pressure-1.pdf}
   
   Note that the \texttt{echo=FALSE} parameter was added to the code chunk
   to prevent printing of the \textbf{R} code that generated the plot.
@@ -565,7 +576,7 @@ starts here.
   \end{Highlighting}
   \end{Shaded}
   
-  \begin{center}\includegraphics{thesis_files/figure-latex/march3plot-1} \end{center}
+  \includegraphics{thesis_files/figure-latex/march3plot-1.pdf}
   
   \section{Additional resources}\label{additional-resources}
   
@@ -780,12 +791,7 @@ starts here.
   \end{Shaded}
   
   \begin{figure}
-  
-  {\centering \includegraphics[width=3.47in]{figure/reed} 
-  
-  }
-  
-  \caption{Reed logo}\label{fig:reedlogo}
+  \includegraphics[width=3.47in]{figure/reed} \caption{Reed logo}\label{fig:reedlogo}
   \end{figure}
   
   Here is a reference to the Reed logo: Figure \ref{fig:reedlogo}. Note
@@ -813,13 +819,10 @@ starts here.
   \end{Highlighting}
   \end{Shaded}
   
-  \begin{figure}
-  
-  {\centering \includegraphics{thesis_files/figure-latex/delaysboxplot-1} 
-  
-  }
-  
-  \caption{Mean Delays by Airline}\label{fig:delaysboxplot}
+  \begin{figure}[htbp]
+  \centering
+  \includegraphics{thesis_files/figure-latex/delaysboxplot-1.pdf}
+  \caption{\label{fig:delaysboxplot}Mean Delays by Airline}
   \end{figure}
   
   Here is a reference to this image: Figure \ref{fig:delaysboxplot}.
@@ -835,12 +838,7 @@ starts here.
   stored in the ``subdivision.pdf'' file.
   
   \begin{figure}
-  
-  {\centering \includegraphics[scale=0.75]{figure/subdivision} 
-  
-  }
-  
-  \caption{Subdiv. graph}\label{fig:subd}
+  \includegraphics[scale=0.75]{figure/subdivision} \caption{Subdiv. graph}\label{fig:subd}
   \end{figure}
   
   Here is a reference to this image: Figure \ref{fig:subd}. Note that
@@ -854,12 +852,7 @@ starts here.
   version of the book.)
   
   \begin{figure}
-  
-  {\centering \includegraphics[angle=180, scale=1.1]{figure/subdivision} 
-  
-  }
-  
-  \caption{A Larger Figure, Flipped Upside Down}\label{fig:subd2}
+  \includegraphics[angle=180, scale=1.1]{figure/subdivision} \caption{A Larger Figure, Flipped Upside Down}\label{fig:subd2}
   \end{figure}
   
   As another example, here is a reference: Figure \ref{fig:subd2}.
@@ -957,13 +950,8 @@ starts here.
   \chapter*{Conclusion}\label{conclusion}
   \addcontentsline{toc}{chapter}{Conclusion}
   
-  \setcounter{chapter}{4} \setcounter{section}{0}
-  
   If we don't want Conclusion to have a chapter number next to it, we can
-  add the \texttt{\{.unnumbered\}} attribute. This has an unintended
-  consequence of the sections being labeled as 3.6 for example though
-  instead of 4.1. The \LaTeX~commands immediately following the Conclusion
-  declaration get things back on track.
+  add the \texttt{\{-\}} attribute.
   
   \textbf{More info}
   
@@ -973,8 +961,7 @@ starts here.
   obvious after a chapter or section title, proper typesetting doesn't add
   an indent there.
   
-  \chapter*{(APPENDIX) Appendix}\label{appendix-appendix}
-  \addcontentsline{toc}{chapter}{(APPENDIX) Appendix}
+  \appendix
   
   \chapter{The First Appendix}\label{the-first-appendix}
   
@@ -1027,7 +1014,8 @@ starts here.
   
   \backmatter
   
-  \chapter{References}\label{references}
+  \chapter*{References}\label{references}
+  \addcontentsline{toc}{chapter}{References}
   
   \noindent
   
